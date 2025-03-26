@@ -28,6 +28,8 @@ public class MultipleDatabaseConnectionPools {
                     config.setMinimumIdle(1);
                     // 设置最大连接数（默认值是10）
                     config.setMaximumPoolSize(3);
+                    // config.addDataSourceProperty("serverTimezone", "UTC");
+                    // config.setConnectionInitSql("SET time_zone = '+00:00'");
                     dataSource = new HikariDataSource(config);
                     dataSourceMap.put(url, dataSource);
                 }
